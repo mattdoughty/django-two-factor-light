@@ -18,5 +18,3 @@ class TwoFactorBackend(ModelBackend):
 
         if user.verify_token(token):
             return user
-        else:
-            raise PermissionDenied()
