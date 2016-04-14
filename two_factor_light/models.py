@@ -1,5 +1,6 @@
 import base64
 import time
+from os import urandom
 
 from django.conf import settings
 from django.contrib.auth.models import AbstractUser
@@ -18,7 +19,7 @@ class AbstractTwoFactorUser(models.Model):
 
     two_factor_required = models.BooleanField(default=True)
     two_factor_enabled = models.BooleanField(default=False)
-    two_factor_secret = models.CharField(max_length=16, blank=True, null=True)
+    two_factor_secret = models.CharField(max_length=16, default=lambda: base64.b32encode(urandom(8)))
     two_factor_custom_name = models.CharField(max_length=50)
 
     def secret_clean(self):
