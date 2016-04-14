@@ -42,4 +42,5 @@ class AbstractTwoFactorUser(models.Model):
 
 
 class TwoFactorUser(AbstractTwoFactorUser, AbstractUser):
-    pass
+    class Meta:
+        swappable = "AUTH_USER_MODEL"
