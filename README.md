@@ -34,7 +34,7 @@ Views that require only password login (for example views that actually setup th
 You are responsible for writing views to handle the logging in of users and setting up two factor auth.
 
 #### Two factor setup view
-By default, the user has a secret key defined when created, so all you need to do is display this to the user with instructions. You may want to generate a QR code using the `setup_url` User property.
+By default, the user has a secret key defined when created, so all you need to do is display this to the user with instructions and set `two_factor_enabled` to `True`. You may want to generate a QR code using the `setup_url` User property.
 
 #### Two factor log in view
 You can authenticate the user with username, password and token in one call, if you just want one login form. Or, you can authenticate the user with a token as a second step after authenticating with username and password.
