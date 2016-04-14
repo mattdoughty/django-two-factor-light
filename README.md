@@ -11,6 +11,7 @@ Two Factor authentication for Django. Inspired by [django-two-factor-auth](https
 
 1. Add `two_factor_light` to `settings.INSTALLED_APPS`
 1. Change `settings.AUTHENTICATION_BACKENDS` to:
+
    ````
    AUTHENTICATION_BACKENDS = (
        'two_factor_light.backends.TwoFactorBackend',
